@@ -26,7 +26,7 @@ def call(body) {
     agent_label: '',
     modules: [
       Checkout: [:],
-      Build: [:]
+      GroovyBuild: [:]
     ]
   ])
 
@@ -44,10 +44,10 @@ def call(body) {
           MPLModule()
         }
       }
-      stage( 'Groovy Build' ) {
+      stage( 'GroovyBuild' ) {
         when { expression { MPLModuleEnabled() } }
         steps {
-          MPLModule('Groovy Build')
+          MPLModule('GroovyBuild')
         }
       }
     }
